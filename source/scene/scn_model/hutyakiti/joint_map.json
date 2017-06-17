@@ -1,0 +1,35 @@
+{
+    "name": "hutyakiti",
+    "map": {
+        "SPINE_BASE":       {"alias":"SPINE_BASE",      "parent": "",               "child": ["SPINE_MID"]},
+        "SPINE_MID":        {"alias":"SPINE_MID",       "parent": "SPINE_BASE",     "child": ["SPINE_SHOULDER"]},
+
+        "SPINE_SHOULDER":   {"alias":"SPINE_SHOULDER",  "parent": "SPINE_MID",      "child": ["SPINE_NECK"]},
+        "SPINE_NECK":       {"alias":"SPINE_NECK",      "parent": "SPINE_SHOULDER", "child": ["SPINE_HEAD"]},
+        "SPINE_HEAD":       {"alias":"SPINE_HEAD",      "parent": "SPINE_NECK",     "child": []},
+
+        "SHOULDER_RIGHT":   {"alias":"SPINE_RIGHT",     "parent": "SPINE_SHOULDER", "child": ["ELBOW_RIGHT"]},
+        "ELBOW_RIGHT":      {"alias":"ELBOW_RIGHT",     "parent": "SHOULDER_RIGHT", "child": ["WRIST_RIGHT"]},
+        "WRIST_RIGHT":      {"alias":"WRIST_RIGHT",     "parent": "ELBOW_RIGHT",    "child": ["HAND_RIGHT"]},
+        "HAND_RIGHT":       {"alias":"HAND_RIGHT",      "parent": "WRIST_RIGHT",    "child": ["HANDTIP_RIGHT", "THUMB_RIGHT"]},
+        "HANDTIP_RIGHT":    {"alias":"HANDTIP_RIGHT",   "parent": "HAND_RIGHT",     "child": []},
+        "THUMB_RIGHT":      {"alias":"THUMB_RIGHT",     "parent": "HAND_RIGHT",     "child": []},
+
+        "HIP_RIGHT":        {"alias":"HIP_RIGHT",       "parent": "SPINE_BASE",     "child": ["KNEE_RIGHT"]},
+        "KNEE_RIGHT":       {"alias":"KNEE_RIGHT",      "parent": "HIP_RIGHT",      "child": ["ANKLE_RIGHT"]},
+        "ANKLE_RIGHT":      {"alias":"ANKLE_RIGHT",     "parent": "KNEE_RIGHT",     "child": ["FOOT_RIGHT"]},
+        "FOOT_RIGHT":       {"alias":"FOOT_RIGHT",      "parent": "ANKLE_RIGHT",    "child": []},
+
+        "SHOULDER_LEFT":    {"alias":"SPINE_LEFT",      "parent": "SPINE_SHOULDER", "child": ["ELBOW_LEFT"]},
+        "ELBOW_LEFT":       {"alias":"ELBOW_LEFT",      "parent": "SHOULDER_LEFT",  "child": ["WRIST_LEFT"]},
+        "WRIST_LEFT":       {"alias":"WRIST_LEFT",      "parent": "ELBOW_LEFT",     "child": ["HAND_LEFT"]},
+        "HAND_LEFT":        {"alias":"HAND_LEFT",       "parent": "WRIST_LEFT",     "child": ["HANDTIP_LEFT", "THUMB_LEFT"]},
+        "HANDTIP_LEFT":     {"alias":"HANDTIP_LEFT",    "parent": "HAND_LEFT",      "child": []},
+        "THUMB_LEFT":       {"alias":"THUMB_LEFT",      "parent": "HAND_LEFT",      "child": []},
+
+        "HIP_LEFT":         {"alias":"HIP_LEFT",        "parent": "SPINE_BASE",     "child": ["KNEE_LEFT"]},
+        "KNEE_LEFT":        {"alias":"KNEE_LEFT",       "parent": "HIP_LEFT",       "child": ["ANKLE_LEFT"]},
+        "ANKLE_LEFT":       {"alias":"ANKLE_LEFT",      "parent": "KNEE_LEFT",      "child": ["FOOT_LEFT"]},
+        "FOOT_LEFT":        {"alias":"FOOT_LEFT",       "parent": "ANKLE_LEFT",     "child": []}
+    }
+}
