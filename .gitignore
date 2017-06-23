@@ -2,4 +2,8 @@
 dist
 res
 source/data
-source/scn_model/hutyakiti
+source/scene/scn_model/hutyakiti
+source/scene/scn_model/hutyakiti_anime
+source/scene/scn_floor/floor_01
+
+*.dae

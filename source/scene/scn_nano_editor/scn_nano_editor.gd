@@ -6,6 +6,7 @@ const MOTION_REEL_LIST = [
 	{"filename": "res://data/motion/motion_data_3.json", "size": 720}
 ]
 const model_common_class = preload("res://scene/scn_model/model_common.gd")
+const model_extra_class = preload("res://scene/scn_model/model_extra.gd")
 const TransoformAxis = Transform(
 	Vector3(1, 0, 0),
 	Vector3(0, 1, 0),
@@ -29,13 +30,8 @@ const JOINT_TYPE_FOR_EDITOR = [
 
 
 # ------------------------------------------------------------------- param(s)
-var AXIS_ARROW = load("res://scene/axis_arrow.scn")
-
-var axis_src = null
-var axis_dst = null
-
-var model_skelton = null
 var model_common = null
+var model_extra = null
 var current_motion_reel = []
 var current_frame = 0
 var current_joint_type = ""
@@ -85,23 +81,6 @@ func setup_motion_data(index):
 
 
 # ============================================================================
-func evt_btn_return():
-
-	get_tree().change_scene("res://scene/scn_menu/scn_menu.scn")
-
-
-# ============================================================================
-func evt_selected_motion(index):
-
-	setup_motion_data(index)
-
-
-# ============================================================================
-func evt_value_changed_position(value):
-	current_frame = value
-
-
-# ============================================================================
 func set_remap_value(dict_rot):
 
 	for axis_name in ["x", "y", "z"]:
@@ -117,40 +96,36 @@ func evt_item_selected_joint(index):
 
 	current_joint_type = get_node("itemlist_joint").get_item_text(index)
 
-	if current_joint_type in ["SHOULDER", "ELBOW", "WRIST", "HIP", "KNEE", "ANKLE"]:
-		set_remap_value(
-			{
-				"x": model_common.joint_adjust["%s_RIGHT" % [current_joint_type]][0],
-				"y": model_common.joint_adjust["%s_RIGHT" % [current_joint_type]][1],
-				"z": model_common.joint_adjust["%s_RIGHT" % [current_joint_type]][2]
-			}
-		)
-	else:
-		print(model_common.joint_adjust[current_joint_type])
-		set_remap_value(
-			{
-				"x": model_common.joint_adjust[current_joint_type][0],
-				"y": model_common.joint_adjust[current_joint_type][1],
-				"z": model_common.joint_adjust[current_joint_type][2]
-			}
-		)
+	var joint_type = current_joint_type
+
+	if joint_type in ["SHOULDER", "ELBOW", "WRIST", "HIP", "KNEE", "ANKLE"]:
+		joint_type = "%s_RIGHT" % [current_joint_type]
+
+	set_remap_value(
+		{
+			"x": model_common.joint_adj[joint_type][0],
+			"y": model_common.joint_adj[joint_type][1],
+			"z": model_common.joint_adj[joint_type][2]
+		}
+	)
 
 
+# ============================================================================
 func update_remap():
 
 	if current_joint_type in ["SPINE_BASE", "SPINE_MID", "SPINE_NECK", "SPINE_SHOULDER"]:
-		model_common.joint_adjust[current_joint_type] = [
+		model_common.joint_adj[current_joint_type] = [
 			int(dict_o_ui.x.o_input1.get_text()),
 			int(dict_o_ui.y.o_input1.get_text()),
 			int(dict_o_ui.z.o_input1.get_text())
 		]
 	elif current_joint_type in ["SHOULDER", "ELBOW", "WRIST", "HIP", "KNEE", "ANKLE"]:
-		model_common.joint_adjust["%s_RIGHT" % [current_joint_type]] = [
+		model_common.joint_adj["%s_RIGHT" % [current_joint_type]] = [
 			int(dict_o_ui.x.o_input1.get_text()),
 			int(dict_o_ui.y.o_input1.get_text()),
 			int(dict_o_ui.z.o_input1.get_text())
 		]
-		model_common.joint_adjust["%s_LEFT" % [current_joint_type]] = [
+		model_common.joint_adj["%s_LEFT" % [current_joint_type]] = [
 			360 - int(dict_o_ui.x.o_input1.get_text()),
 			360 - int(dict_o_ui.y.o_input1.get_text()),
 			360 - int(dict_o_ui.z.o_input1.get_text())
@@ -167,35 +142,11 @@ func _process(delta):
 
 	var dict_joint_collection = model_common.build_joint_collection(pose)
 
-	for pose_joint in pose:
-		var joint_type = pose_joint.joint_type
-		var o_scene = axis_src[joint_type]
-		var vct3_pos = dict_joint_collection[joint_type].vct3
-		var quat_rot = dict_joint_collection[joint_type].quat
+	model_common.update_axis_src(pose, get_node("chk_kinect_joint").is_pressed())
+	model_common.update_pose(pose, get_node("chk_model").is_pressed())
+	model_common.update_axis_dst(pose, get_node("chk_model_joint").is_pressed())
 
-		vct3_pos *= 2
-		vct3_pos.x -= 5
-		vct3_pos.y -= 1
-		vct3_pos.z -= 2
-
-		o_scene.set_transform(Transform(quat_rot))
-		o_scene.set_translation(vct3_pos)
-		o_scene.set_scale(Vector3(0.05, 0.05, 0.05))
-		o_scene.show()
-
-	model_common.update_pose(pose)
-
-
-#	for pose_joint in pose:
-#		if pose_joint.joint_type in model_common.joint_map.map.keys():
-#			var bone_idx = model_skelton.find_bone(pose_joint.joint_type)
-#			var tf_pose = model_skelton.get_bone_global_pose(bone_idx)
-#			var o_scene = axis_dst[pose_joint.joint_type]
-
-#			o_scene.set_transform(tf_pose)
-#			o_scene.set_scale(Vector3(0.05, 0.05, 0.05))
-#			o_scene.show()
-
+	model_extra.update(model_common.model, model_common.skeleton)
 
 	# frame update
 	get_node("label_frame").set_text(str(current_frame))
@@ -212,10 +163,17 @@ func _ready():
 	get_node("btn_return").connect("pressed", self, "evt_btn_return")
 
 	for item in MOTION_REEL_LIST:
-		get_node("itemlist_motion").add_item(item["filename"])
-	get_node("itemlist_motion").connect("item_selected", self, "evt_selected_motion")
+		get_node("optbtn_motion").add_item(item["filename"])
+
+	get_node("optbtn_screen_shader").add_item("Node/off")
+	get_node("optbtn_screen_shader").add_item("Node/noise")
+	get_node("optbtn_screen_shader").add_item("Node/blur")
+	get_node("optbtn_screen_shader").add_item("Node/mosaic")
+	get_node("optbtn_screen_shader").add_item("Node/wave")
 
 	get_node("scr_position").connect("value_changed", self, "evt_value_changed_position")
+
+	get_node("btn_adj_save").connect("pressed", self, "evt_btn_adj_save")
 
 	setup_motion_data(0)
 
@@ -226,22 +184,10 @@ func _ready():
 	add_child(o_model)
 
 	model_common = model_common_class.new()
-	model_common.joint_map_load(o_model, "res://scene/scn_model/hutyakiti/joint_map.json")
+	model_common.model_load(self, o_model, "hutyakiti")
 
-	axis_src = {}
-	axis_dst = {}
-	for name in model_common.joint_map.map.keys():
-		var o_scene = null
-
-		o_scene = AXIS_ARROW.instance()
-		o_scene.hide()
-		add_child(o_scene)
-		axis_src[name] = o_scene
-
-		o_scene = AXIS_ARROW.instance()
-		o_scene.hide()
-		add_child(o_scene)
-		axis_dst[name] = o_scene
+	model_extra = model_extra_class.new()
+	model_extra.setup(o_model, model_common.skeleton)
 
 	for name in JOINT_TYPE_FOR_EDITOR:
 		get_node("itemlist_joint").add_item(name)
@@ -262,6 +208,41 @@ func _ready():
 		dict_o_ui[axis_name] = o_ui
 
 	set_process(true)
+
+
+# ============================================================================
+func _on_btn_return_pressed():
+
+	get_tree().change_scene("res://scene/scn_menu/scn_menu.scn")
+
+
+# ============================================================================
+func _on_btn_adj_save_pressed():
+
+	model_common.adj_save()
+
+
+# ============================================================================
+func _on_optbtn_motion_item_selected(index):
+
+	setup_motion_data(index)
+
+
+# ============================================================================
+func _on_optbtn_screen_shader_item_selected(index):
+
+	get_node("Node/off").hide()
+	get_node("Node/noise").hide()
+	get_node("Node/blur").hide()
+	get_node("Node/mosaic").hide()
+	get_node("Node/wave").hide()
+
+	get_node(get_node("optbtn_screen_shader").get_text()).show()
+
+
+# ============================================================================
+func evt_value_changed_position(value):
+	current_frame = value
 
 
 
