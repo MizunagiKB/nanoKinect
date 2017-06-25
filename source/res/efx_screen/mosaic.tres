@@ -1,0 +1,20 @@
+[gd_resource type="CanvasItemShader" format=1]
+
+[resource]
+
+_code = {
+"fragment": "uniform float size_x=0.01;
+uniform float size_y=0.01;
+
+vec2 uv = SCREEN_UV;
+uv -= mod(uv, vec2(size_x, size_y));
+
+COLOR.rgb = texscreen(uv);
+",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+

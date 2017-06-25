@@ -1,0 +1,15 @@
+[gd_resource type="CanvasItemShader" format=1]
+
+[resource]
+
+_code = {
+"fragment": "vec3 c = texscreen(SCREEN_UV);
+COLOR.rgb = normalize(c);
+",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+

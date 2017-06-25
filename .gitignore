@@ -1,9 +1,3 @@
 .DS_Store
 dist
-res
-source/data
-source/scene/scn_model/hutyakiti
-source/scene/scn_model/hutyakiti_anime
-source/scene/scn_floor/floor_01
-
-*.dae
+resource

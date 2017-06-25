@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="2" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+	<ext_resource path="res://res/scene/scn_nano_viewer.gd" type="Script" index="0"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "conn_count" </string>
+			<int> 1 </int>
+			<string> "conns" </string>
+			<int_array  len="6"> 				2, 0, 25, 24, 2, 0 </int_array>
+			<string> "editable_instances" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "names" </string>
+			<string_array  len="26">
+				<string> "scn_nano_viewer" </string>
+				<string> "script/script" </string>
+				<string> "Node" </string>
+				<string> "label_scene" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "text" </string>
+				<string> "percent_visible" </string>
+				<string> "lines_skipped" </string>
+				<string> "max_lines_visible" </string>
+				<string> "Label" </string>
+				<string> "btn_return" </string>
+				<string> "toggle_mode" </string>
+				<string> "enabled_focus_mode" </string>
+				<string> "shortcut" </string>
+				<string> "flat" </string>
+				<string> "Button" </string>
+				<string> "align" </string>
+				<string> "_on_btn_return_pressed" </string>
+				<string> "pressed" </string>
+			</string_array>
+			<string> "node_count" </string>
+			<int> 4 </int>
+			<string> "node_paths" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="106"> 				-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 16, 3, -1, 12, 4, 1, 5, 1, 6, 2, 7, 3, 8, 4, 9, 4, 10, 5, 11, 6, 12, 7, 13, 8, 14, 3, 15, 9, 0, 0, 0, 22, 17, -1, 13, 4, 10, 5, 1, 6, 2, 7, 2, 8, 4, 9, 11, 10, 5, 11, 12, 18, 10, 19, 2, 20, 13, 12, 14, 21, 10, 0, 0, 0, 16, 16, -1, 13, 4, 1, 5, 1, 6, 2, 7, 3, 8, 15, 9, 16, 10, 17, 11, 18, 12, 19, 23, 20, 13, 8, 14, 3, 15, 9, 0 </int_array>
+			<string> "variants" </string>
+			<array  len="21" shared="false">
+				<resource  external="0">  </resource>
+				<bool> True </bool>
+				<int> 2 </int>
+				<int> 0 </int>
+				<real> 16 </real>
+				<real> 136 </real>
+				<real> 40 </real>
+				<string> "scn_nano_viewer" </string>
+				<real> 1 </real>
+				<int> -1 </int>
+				<bool> False </bool>
+				<real> 48 </real>
+				<real> 72 </real>
+				<resource name=""></resource>				<string> "&lt; Return" </string>
+				<real> 8 </real>
+				<real> 272 </real>
+				<real> 952 </real>
+				<real> 296 </real>
+				<string> "Not yet implemented" </string>
+				<int> 1 </int>
+			</array>
+			<string> "version" </string>
+			<int> 2 </int>
+		</dictionary>
+
+	</main_resource>
+</resource_file>

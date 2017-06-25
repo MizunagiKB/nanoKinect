@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="16" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+	<ext_resource path="res://res/scene/scn_nano_editor.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://res/efx_screen/mosaic.tres" type="Shader" index="1"></ext_resource>
+	<ext_resource path="res://res/efx_screen/negative.tres" type="Shader" index="3"></ext_resource>
+	<ext_resource path="res://res/efx_screen/wave.tres" type="Shader" index="5"></ext_resource>
+	<ext_resource path="res://res/efx_screen/sepia.tres" type="Shader" index="2"></ext_resource>
+	<ext_resource path="res://res/efx_screen/normalize.tres" type="Shader" index="4"></ext_resource>
+	<resource type="Environment" path="local://4">
+		<bool name="ambient_light/enabled"> True </bool>
+		<color name="ambient_light/color"> 0.285156, 0.285156, 0.285156, 1 </color>
+		<real name="ambient_light/energy"> 1 </real>
+		<bool name="fxaa/enabled"> False </bool>
+		<int name="background/mode"> 1 </int>
+		<color name="background/color"> 0, 0, 0, 1 </color>
+		<nil name="background/texture">  </nil>
+		<nil name="background/cubemap">  </nil>
+		<real name="background/energy"> 1 </real>
+		<real name="background/scale"> 1 </real>
+		<real name="background/glow"> 0 </real>
+		<nil name="background/canvas_max_layer">  </nil>
+		<bool name="glow/enabled"> False </bool>
+		<int name="glow/blur_passes"> 4 </int>
+		<real name="glow/blur_scale"> 1 </real>
+		<real name="glow/blur_strength"> 1 </real>
+		<int name="glow/blur_blend_mode"> 2 </int>
+		<real name="glow/bloom"> 3.18 </real>
+		<real name="glow/bloom_treshold"> 0.95 </real>
+		<bool name="dof_blur/enabled"> False </bool>
+		<int name="dof_blur/blur_passes"> 1 </int>
+		<real name="dof_blur/begin"> 1 </real>
+		<real name="dof_blur/range"> 2472.400146 </real>
+		<bool name="hdr/enabled"> False </bool>
+		<real name="hdr/tonemapper"> 2 </real>
+		<real name="hdr/exposure"> 0.44 </real>
+		<real name="hdr/white"> 2.6 </real>
+		<real name="hdr/glow_treshold"> 1.22 </real>
+		<real name="hdr/glow_scale"> 2.45 </real>
+		<real name="hdr/min_luminance"> 13.27 </real>
+		<real name="hdr/max_luminance"> 0.01 </real>
+		<real name="hdr/exposure_adj_speed"> 0.001 </real>
+		<bool name="fog/enabled"> False </bool>
+		<real name="fog/begin"> 0.01 </real>
+		<color name="fog/begin_color"> 0, 0, 0, 1 </color>
+		<color name="fog/end_color"> 0, 0, 0, 1 </color>
+		<real name="fog/attenuation"> 1 </real>
+		<bool name="fog/bg"> False </bool>
+		<bool name="bcs/enabled"> False </bool>
+		<real name="bcs/brightness"> 1 </real>
+		<real name="bcs/contrast"> 1 </real>
+		<real name="bcs/saturation"> 1.59 </real>
+		<bool name="srgb/enabled"> False </bool>
+
+	</resource>
+	<resource type="CanvasItemMaterial" path="local://6">
+		<resource name="shader/shader" external="1">  </resource>
+		<int name="shader/shading_mode"> 0 </int>
+		<real name="shader_param/size_x"> 0.01 </real>
+		<real name="shader_param/size_y"> 0.01 </real>
+
+	</resource>
+	<resource type="ImageTexture" path="local://7">
+		<int name="flags"> 7 </int>
+		<image name="image"></image>		<vector2 name="size"> 1, 1 </vector2>
+		<int name="storage"> 0 </int>
+		<real name="lossy_quality"> 0.7 </real>
+
+	</resource>
+	<resource type="CanvasItemMaterial" path="local://12">
+		<resource name="shader/shader" external="2">  </resource>
+		<int name="shader/shading_mode"> 0 </int>
+		<color name="shader_param/base"> 0.75, 0.6, 0.6, 1 </color>
+
+	</resource>
+	<resource type="ImageTexture" path="local://13">
+		<int name="flags"> 7 </int>
+		<image name="image"></image>		<vector2 name="size"> 1, 1 </vector2>
+		<int name="storage"> 0 </int>
+		<real name="lossy_quality"> 0.7 </real>
+
+	</resource>
+	<resource type="CanvasItemMaterial" path="local://24">
+		<resource name="shader/shader" external="3">  </resource>
+		<int name="shader/shading_mode"> 0 </int>
+
+	</resource>
+	<resource type="CanvasItemMaterial" path="local://19">
+		<resource name="shader/shader" external="4">  </resource>
+		<int name="shader/shading_mode"> 0 </int>
+
+	</resource>
+	<resource type="ImageTexture" path="local://20">
+		<int name="flags"> 7 </int>
+		<image name="image"></image>		<vector2 name="size"> 1, 1 </vector2>
+		<int name="storage"> 0 </int>
+		<real name="lossy_quality"> 0.7 </real>
+
+	</resource>
+	<resource type="CanvasItemMaterial" path="local://22">
+		<resource name="shader/shader" external="5">  </resource>
+		<int name="shader/shading_mode"> 0 </int>
+		<real name="shader_param/frequency"> 10 </real>
+		<real name="shader_param/depth"> 0.05 </real>
+
+	</resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "conn_count" </string>
+			<int> 7 </int>
+			<string> "conns" </string>
+			<int_array  len="42"> 				16, 0, 143, 142, 2, 0, 18, 0, 145, 144, 2, 0, 21, 0, 147, 146, 2, 0, 22, 0, 147, 148, 2, 0, 35, 0, 145, 149, 2, 0, 38, 0, 145, 150, 2, 0, 41, 0, 143, 151, 2, 0 </int_array>
+			<string> "editable_instances" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "names" </string>
+			<string_array  len="152">
+				<string> "scn_nano_editor" </string>
+				<string> "script/script" </string>
+				<string> "Node" </string>
+				<string> "Camera" </string>
+				<string> "_import_transform" </string>
+				<string> "transform/local" </string>
+				<string> "projection" </string>
+				<string> "fov" </string>
+				<string> "near" </string>
+				<string> "far" </string>
+				<string> "keep_aspect" </string>
+				<string> "current" </string>
+				<string> "visible_layers" </string>
+				<string> "environment" </string>
+				<string> "h_offset" </string>
+				<string> "v_offset" </string>
+				<string> "WorldEnvironment" </string>
+				<string> "DirectionalLight" </string>
+				<string> "layers" </string>
+				<string> "params/enabled" </string>
+				<string> "params/editor_only" </string>
+				<string> "params/bake_mode" </string>
+				<string> "params/energy" </string>
+				<string> "colors/diffuse" </string>
+				<string> "colors/specular" </string>
+				<string> "shadow/shadow" </string>
+				<string> "shadow/darkening" </string>
+				<string> "shadow/z_offset" </string>
+				<string> "shadow/z_slope_scale" </string>
+				<string> "shadow/esm_multiplier" </string>
+				<string> "shadow/blur_passes" </string>
+				<string> "projector" </string>
+				<string> "operator" </string>
+				<string> "shadow/mode" </string>
+				<string> "shadow/max_distance" </string>
+				<string> "shadow/split_weight" </string>
+				<string> "shadow/zoffset_scale" </string>
+				<string> "ImmediateGeometry" </string>
+				<string> "geometry/visible" </string>
+				<string> "geometry/material_override" </string>
+				<string> "geometry/cast_shadow" </string>
+				<string> "geometry/receive_shadows" </string>
+				<string> "geometry/range_begin" </string>
+				<string> "geometry/range_end" </string>
+				<string> "geometry/extra_cull_margin" </string>
+				<string> "geometry/billboard" </string>
+				<string> "geometry/billboard_y" </string>
+				<string> "geometry/depth_scale" </string>
+				<string> "geometry/visible_in_all_rooms" </string>
+				<string> "geometry/use_baked_light" </string>
+				<string> "geometry/baked_light_tex_id" </string>
+				<string> "efx_screen" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "Control" </string>
+				<string> "off" </string>
+				<string> "visibility/visible" </string>
+				<string> "stretch_mode" </string>
+				<string> "TextureFrame" </string>
+				<string> "mosaic" </string>
+				<string> "material/material" </string>
+				<string> "texture" </string>
+				<string> "expand" </string>
+				<string> "sepia" </string>
+				<string> "negative" </string>
+				<string> "normalize" </string>
+				<string> "wave" </string>
+				<string> "ui" </string>
+				<string> "editor/display_folded" </string>
+				<string> "label_scene" </string>
+				<string> "text" </string>
+				<string> "percent_visible" </string>
+				<string> "lines_skipped" </string>
+				<string> "max_lines_visible" </string>
+				<string> "Label" </string>
+				<string> "label_fps" </string>
+				<string> "align" </string>
+				<string> "valign" </string>
+				<string> "label_frame" </string>
+				<string> "btn_return" </string>
+				<string> "toggle_mode" </string>
+				<string> "enabled_focus_mode" </string>
+				<string> "shortcut" </string>
+				<string> "flat" </string>
+				<string> "Button" </string>
+				<string> "btn_auto" </string>
+				<string> "CheckButton" </string>
+				<string> "scr_position" </string>
+				<string> "range/min" </string>
+				<string> "range/max" </string>
+				<string> "range/step" </string>
+				<string> "range/page" </string>
+				<string> "range/value" </string>
+				<string> "range/exp_edit" </string>
+				<string> "range/rounded" </string>
+				<string> "custom_step" </string>
+				<string> "HScrollBar" </string>
+				<string> "lbl_itemlist" </string>
+				<string> "itemlist_joint" </string>
+				<string> "ItemList" </string>
+				<string> "optbtn_motion" </string>
+				<string> "selected" </string>
+				<string> "items" </string>
+				<string> "OptionButton" </string>
+				<string> "optbtn_screen_shader" </string>
+				<string> "chk_kinect_joint" </string>
+				<string> "is_pressed" </string>
+				<string> "CheckBox" </string>
+				<string> "chk_model" </string>
+				<string> "chk_model_joint" </string>
+				<string> "slider_x" </string>
+				<string> "tick_count" </string>
+				<string> "ticks_on_borders" </string>
+				<string> "focus_mode" </string>
+				<string> "HSlider" </string>
+				<string> "lbl_x" </string>
+				<string> "input_x" </string>
+				<string> "placeholder/alpha" </string>
+				<string> "editable" </string>
+				<string> "caret/caret_blink" </string>
+				<string> "caret/caret_blink_speed" </string>
+				<string> "LineEdit" </string>
+				<string> "slider_y" </string>
+				<string> "lbl_y" </string>
+				<string> "input_y" </string>
+				<string> "slider_z" </string>
+				<string> "lbl_z" </string>
+				<string> "input_z" </string>
+				<string> "slider_w" </string>
+				<string> "lbl_w" </string>
+				<string> "input_w" </string>
+				<string> "slider_h" </string>
+				<string> "lbl_h" </string>
+				<string> "input_h" </string>
+				<string> "btn_adj_save" </string>
+				<string> "ReferenceFrame" </string>
+				<string> "_on_btn_return_pressed" </string>
+				<string> "pressed" </string>
+				<string> "_on_scr_position_value_changed" </string>
+				<string> "value_changed" </string>
+				<string> "_on_optbtn_motion_item_selected" </string>
+				<string> "item_selected" </string>
+				<string> "_on_optbtn_screen_shader_item_selected" </string>
+				<string> "_on_slider_w_value_changed" </string>
+				<string> "_on_slider_h_value_changed" </string>
+				<string> "_on_btn_adj_save_pressed" </string>
+			</string_array>
+			<string> "node_count" </string>
+			<int> 43 </int>
+			<string> "node_paths" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="1427"> 				-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 3, 3, -1, 12, 4, 1, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 10, 14, 11, 15, 11, 0, 0, 0, 16, 16, -1, 2, 4, 1, 13, 12, 0, 0, 0, 17, 17, -1, 21, 4, 1, 5, 13, 18, 7, 19, 8, 20, 14, 21, 3, 22, 15, 23, 16, 24, 16, 25, 8, 26, 11, 27, 17, 28, 11, 29, 18, 30, 11, 31, 10, 32, 3, 33, 7, 34, 11, 35, 19, 36, 20, 0, 0, 0, 37, 37, -1, 15, 4, 1, 18, 7, 38, 8, 39, 10, 40, 7, 41, 8, 42, 11, 43, 11, 44, 11, 45, 14, 46, 14, 47, 14, 48, 14, 49, 14, 50, 3, 0, 0, 0, 60, 51, -1, 8, 52, 14, 53, 8, 54, 21, 55, 21, 56, 11, 57, 11, 58, 22, 59, 22, 0, 5, 0, 64, 61, -1, 10, 62, 14, 52, 8, 53, 8, 54, 21, 55, 21, 56, 11, 57, 11, 58, 22, 59, 22, 63, 3, 0, 5, 0, 64, 65, -1, 13, 62, 14, 66, 23, 52, 8, 53, 8, 54, 21, 55, 21, 56, 11, 57, 11, 58, 24, 59, 25, 67, 26, 68, 8, 63, 3, 0, 5, 0, 64, 69, -1, 13, 62, 14, 66, 27, 52, 8, 53, 8, 54, 21, 55, 21, 56, 11, 57, 11, 58, 24, 59, 25, 67, 28, 68, 8, 63, 3, 0, 5, 0, 64, 70, -1, 13, 62, 14, 66, 29, 52, 8, 53, 8, 54, 21, 55, 21, 56, 11, 57, 11, 58, 24, 59, 25, 67, 28, 68, 8, 63, 3, 0, 5, 0, 64, 71, -1, 13, 62, 14, 66, 30, 52, 8, 53, 8, 54, 21, 55, 21, 56, 11, 57, 11, 58, 24, 59, 25, 67, 31, 68, 8, 63, 3, 0, 5, 0, 64, 72, -1, 13, 62, 14, 66, 32, 52, 8, 53, 8, 54, 21, 55, 21, 56, 11, 57, 11, 58, 24, 59, 25, 67, 31, 68, 8, 63, 3, 0, 0, 0, 60, 73, -1, 9, 74, 8, 52, 14, 53, 8, 54, 21, 55, 21, 56, 11, 57, 11, 58, 22, 59, 22, 0, 12, 0, 80, 75, -1, 12, 52, 8, 53, 8, 54, 21, 55, 3, 56, 33, 57, 33, 58, 34, 59, 22, 76, 35, 77, 15, 78, 3, 79, 36, 0, 12, 0, 80, 81, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 37, 57, 38, 58, 39, 59, 40, 82, 21, 83, 21, 77, 15, 78, 3, 79, 36, 0, 12, 0, 80, 84, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 37, 57, 22, 58, 39, 59, 41, 82, 21, 83, 21, 77, 15, 78, 3, 79, 36, 0, 12, 0, 90, 85, -1, 13, 52, 14, 53, 8, 54, 21, 55, 21, 56, 33, 57, 42, 58, 34, 59, 43, 86, 14, 87, 21, 88, 10, 76, 44, 89, 14, 0, 12, 0, 92, 91, -1, 14, 52, 14, 53, 8, 54, 21, 55, 21, 56, 38, 57, 45, 58, 46, 59, 47, 86, 8, 87, 3, 88, 10, 76, 48, 89, 14, 82, 3, 0, 12, 0, 102, 93, -1, 16, 52, 14, 53, 8, 54, 21, 55, 3, 56, 49, 57, 45, 58, 39, 59, 47, 94, 11, 95, 6, 96, 15, 97, 11, 98, 15, 99, 14, 100, 14, 101, 15, 0, 12, 0, 80, 103, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 50, 57, 51, 58, 52, 59, 53, 76, 54, 82, 21, 77, 15, 78, 3, 79, 36, 0, 12, 0, 105, 104, -1, 8, 52, 14, 53, 8, 54, 21, 55, 21, 56, 55, 57, 51, 58, 39, 59, 56, 0, 12, 0, 109, 106, -1, 15, 52, 14, 53, 8, 54, 21, 55, 21, 56, 49, 57, 57, 58, 58, 59, 59, 86, 14, 87, 21, 88, 10, 89, 14, 82, 3, 107, 36, 108, 60, 0, 12, 0, 109, 110, -1, 15, 52, 14, 53, 8, 54, 21, 55, 21, 56, 61, 57, 57, 58, 50, 59, 59, 86, 14, 87, 21, 88, 10, 89, 14, 82, 3, 107, 36, 108, 60, 0, 12, 0, 113, 111, -1, 15, 52, 14, 53, 8, 54, 21, 55, 21, 56, 33, 57, 62, 58, 63, 59, 49, 86, 8, 112, 8, 87, 3, 88, 10, 76, 64, 89, 14, 82, 3, 0, 12, 0, 113, 114, -1, 15, 52, 14, 53, 8, 54, 21, 55, 21, 56, 33, 57, 63, 58, 63, 59, 65, 86, 8, 112, 8, 87, 3, 88, 10, 76, 66, 89, 14, 82, 3, 0, 12, 0, 113, 115, -1, 15, 52, 14, 53, 8, 54, 21, 55, 21, 56, 33, 57, 51, 58, 63, 59, 53, 86, 8, 112, 8, 87, 3, 88, 10, 76, 67, 89, 14, 82, 3, 0, 12, 0, 120, 116, -1, 18, 52, 14, 53, 8, 54, 21, 55, 3, 56, 55, 57, 68, 58, 69, 59, 70, 94, 11, 95, 71, 96, 72, 97, 11, 98, 11, 99, 14, 100, 14, 117, 3, 118, 14, 119, 3, 0, 26, 0, 80, 121, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 73, 57, 11, 58, 74, 59, 75, 76, 76, 82, 21, 77, 15, 78, 3, 79, 36, 0, 26, 0, 127, 122, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 77, 57, 11, 58, 68, 59, 75, 123, 78, 124, 14, 119, 21, 125, 14, 126, 79, 0, 12, 0, 120, 128, -1, 19, 74, 8, 52, 14, 53, 8, 54, 21, 55, 3, 56, 55, 57, 80, 58, 69, 59, 81, 94, 11, 95, 71, 96, 72, 97, 11, 98, 11, 99, 14, 100, 14, 117, 3, 118, 14, 119, 3, 0, 29, 0, 80, 129, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 73, 57, 11, 58, 74, 59, 75, 76, 82, 82, 21, 77, 15, 78, 3, 79, 36, 0, 29, 0, 127, 130, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 77, 57, 11, 58, 68, 59, 75, 123, 78, 124, 14, 119, 21, 125, 14, 126, 79, 0, 12, 0, 120, 131, -1, 19, 74, 8, 52, 14, 53, 8, 54, 21, 55, 3, 56, 55, 57, 83, 58, 69, 59, 84, 94, 11, 95, 71, 96, 72, 97, 11, 98, 11, 99, 14, 100, 14, 117, 3, 118, 14, 119, 3, 0, 32, 0, 80, 132, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 73, 57, 11, 58, 74, 59, 75, 76, 85, 82, 21, 77, 15, 78, 3, 79, 36, 0, 32, 0, 127, 133, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 77, 57, 11, 58, 68, 59, 75, 123, 78, 124, 14, 119, 21, 125, 14, 126, 79, 0, 12, 0, 120, 134, -1, 18, 52, 14, 53, 8, 54, 21, 55, 3, 56, 55, 57, 86, 58, 69, 59, 58, 94, 19, 95, 87, 96, 88, 97, 11, 98, 15, 99, 14, 100, 14, 117, 3, 118, 14, 119, 3, 0, 35, 0, 80, 135, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 89, 57, 11, 58, 74, 59, 75, 76, 90, 82, 21, 77, 15, 78, 3, 79, 36, 0, 35, 0, 127, 136, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 77, 57, 11, 58, 68, 59, 75, 123, 78, 124, 14, 119, 21, 125, 14, 126, 79, 0, 12, 0, 120, 137, -1, 18, 52, 14, 53, 8, 54, 21, 55, 3, 56, 55, 57, 91, 58, 69, 59, 92, 94, 19, 95, 87, 96, 88, 97, 11, 98, 15, 99, 14, 100, 14, 117, 3, 118, 14, 119, 3, 0, 38, 0, 80, 138, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 89, 57, 11, 58, 74, 59, 75, 76, 93, 82, 21, 77, 15, 78, 3, 79, 36, 0, 38, 0, 127, 139, -1, 13, 52, 8, 53, 8, 54, 21, 55, 3, 56, 77, 57, 11, 58, 68, 59, 75, 123, 78, 124, 14, 119, 21, 125, 14, 126, 79, 0, 12, 0, 90, 140, -1, 13, 52, 14, 53, 8, 54, 21, 55, 21, 56, 94, 57, 57, 58, 39, 59, 59, 86, 14, 87, 21, 88, 10, 76, 95, 89, 14, 0, 12, 0, 141, 141, -1, 8, 52, 14, 53, 8, 54, 21, 55, 21, 56, 96, 57, 43, 58, 97, 59, 92, 0 </int_array>
+			<string> "variants" </string>
+			<array  len="98" shared="false">
+				<resource  external="0">  </resource>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 </transform>
+				<int> 0 </int>
+				<real> 45 </real>
+				<real> 0.1 </real>
+				<real> 100 </real>
+				<int> 1 </int>
+				<bool> True </bool>
+				<int> 1048575 </int>
+				<resource name=""></resource>				<real> 0 </real>
+				<resource  resource_type="Environment" path="local://4">  </resource>
+				<transform> 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4.25241, 5.51976 </transform>
+				<bool> False </bool>
+				<real> 1 </real>
+				<color> 1, 1, 1, 1 </color>
+				<real> 0.05 </real>
+				<real> 30 </real>
+				<real> 0.5 </real>
+				<real> 2 </real>
+				<int> 2 </int>
+				<real> 40 </real>
+				<resource  resource_type="CanvasItemMaterial" path="local://6">  </resource>
+				<real> 960 </real>
+				<real> 544 </real>
+				<resource  resource_type="Texture" path="local://7">  </resource>
+				<resource  resource_type="CanvasItemMaterial" path="local://12">  </resource>
+				<resource  resource_type="Texture" path="local://13">  </resource>
+				<resource  resource_type="CanvasItemMaterial" path="local://24">  </resource>
+				<resource  resource_type="CanvasItemMaterial" path="local://19">  </resource>
+				<resource  resource_type="Texture" path="local://20">  </resource>
+				<resource  resource_type="CanvasItemMaterial" path="local://22">  </resource>
+				<real> 16 </real>
+				<real> 136 </real>
+				<string> "scn_nano_editor" </string>
+				<int> -1 </int>
+				<real> 904 </real>
+				<real> 8 </real>
+				<real> 952 </real>
+				<real> 32 </real>
+				<real> 64 </real>
+				<real> 48 </real>
+				<real> 72 </real>
+				<string> "&lt; Return" </string>
+				<real> 504 </real>
+				<real> 114 </real>
+				<real> 528 </real>
+				<string> "Auto" </string>
+				<real> 120 </real>
+				<real> 576 </real>
+				<real> 160 </real>
+				<real> 640 </real>
+				<real> 184 </real>
+				<string> "Joint" </string>
+				<real> 648 </real>
+				<real> 296 </real>
+				<real> 472 </real>
+				<real> 424 </real>
+				<real> 496 </real>
+				<array  len="0" shared="false">
+				</array>
+				<real> 448 </real>
+				<real> 96 </real>
+				<real> 128 </real>
+				<string> "Kinect" </string>
+				<real> 152 </real>
+				<string> "model" </string>
+				<string> "model joint" </string>
+				<real> 304 </real>
+				<real> 880 </real>
+				<real> 320 </real>
+				<real> 345 </real>
+				<real> 15 </real>
+				<real> -72 </real>
+				<real> -8 </real>
+				<real> 24 </real>
+				<string> "X-Axis" </string>
+				<real> 240 </real>
+				<real> 0.6 </real>
+				<real> 0.65 </real>
+				<real> 336 </real>
+				<real> 352 </real>
+				<string> "Y-Axis" </string>
+				<real> 368 </real>
+				<real> 384 </real>
+				<string> "Z-Axis" </string>
+				<real> 408 </real>
+				<real> 5 </real>
+				<real> 0.1 </real>
+				<real> -88 </real>
+				<string> "W Scale" </string>
+				<real> 440 </real>
+				<real> 456 </real>
+				<string> "H Scale" </string>
+				<real> 824 </real>
+				<string> "Save Adjust" </string>
+				<real> 168 </real>
+				<real> 552 </real>
+			</array>
+			<string> "version" </string>
+			<int> 2 </int>
+		</dictionary>
+
+	</main_resource>
+</resource_file>

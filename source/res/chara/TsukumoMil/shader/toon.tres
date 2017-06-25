@@ -1,0 +1,52 @@
+[gd_resource type="MaterialShader" format=1]
+
+[resource]
+
+_code = {
+"fragment": "//
+uniform texture tex_color;
+uniform texture tex_shade;
+uniform vec3 light_direction = vec3(1, 1, 0);
+
+float get_shade_tone(vec3 norm) {
+	return max(0.0, dot(norm, normalize(light_direction)));
+}
+
+vec4 col_color = tex(tex_color, UV);
+float v = get_shade_tone(NORMAL);
+
+DIFFUSE = vec3(0, 0, 0);
+EMISSION = tex(tex_shade, vec2(0, v)).rgb * col_color.rgb;
+
+// [EOF]
+",
+"fragment_ofs": 0,
+"light": "/*
+//
+uniform texture tex_color;
+uniform texture tex_shade;
+uniform vec3 light_direction;
+
+float get_shade_tone(vec3 norm) {
+	return max(0.0, dot(norm, normalize(light_direction)));
+}
+
+DIFFUSE = vec3(0, 0, 0);
+SPECULAR = vec3(0, 0, 0); 
+//EMISSION.rgb = vec3(1, 1, 1);
+float v = get_shade_tone(NORMAL);
+
+vec3 col_color = tex(tex_color, UV).rgb;
+
+DIFFUSE.rgb = tex(tex_color, UV).rgb * 0.1;
+EMISSION.rgb = tex(tex_shade, vec2(0, v)).rgb * col_color.rgb;
+
+*/
+DIFFUSE = vec3(1, 0, 0);
+// [EOF]
+",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+

@@ -1,0 +1,23 @@
+[gd_resource type="MaterialShader" format=1]
+
+[resource]
+
+_code = {
+"fragment": "//
+uniform texture tex_color;
+uniform vec3 light_direction;
+
+vec3 col_color = tex(tex_color, UV).rgb;
+
+DIFFUSE = vec3(0, 0, 0);
+EMISSION.rgb = col_color.rgb;
+
+// [EOF]
+",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
