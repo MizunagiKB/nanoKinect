@@ -31,7 +31,26 @@ class CQuatQueue:
 			if self.list_quat.size() == 1:
 				return self.list_quat[0]
 			else:
-				return self.list_quat[0].slerp(self.list_quat[1], 0.5)
+
+				var iq = Vector3(0, 0, 0)
+				for q in self.list_quat:
+					var r = acos(q.w)
+					iq += Vector3(
+						(q.x / sin(r)) * r,
+						(q.y / sin(r)) * r,
+						(q.z / sin(r)) * r
+					) * (1.0 / self.list_quat.size())
+#					break
+
+#				iq /= self.list_quat.size()
+				var r = sqrt(iq.x * iq.x + iq.y * iq.y + iq.z * iq.z)
+
+				#print(self.list_quat[0].slerp(self.list_quat[1], 0.5))
+				#print(Quat(Vector3(iq.x / -r, iq.y / -r, iq.z / -r), r * 2))
+				#print("----")
+
+				#return self.list_quat[0].slerp(self.list_quat[1], 0.5)
+				return Quat(Vector3(iq.x / r, iq.y / r, iq.z / r) * -1, r * 2)
 
 # ---------------------------------------------------------------- function(s)
 # ============================================================================
